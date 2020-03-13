@@ -1,9 +1,8 @@
-using System.Linq;
-using System.Collections.Generic;
+using BattleShipStateTracker.Models.Boards;
 
 namespace BattleShipStateTracker.Models
 {
-  public class Cell
+    public class Cell
   {
     public BattleShipType BattleShipType { get; set; }
     public ShotType ShotType { get; set; }

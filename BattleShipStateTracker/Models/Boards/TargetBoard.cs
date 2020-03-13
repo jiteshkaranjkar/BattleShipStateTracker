@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BattleShipStateTracker.Extensions;
+using BattleShipStateTracker.Models.Boards;
 
 namespace BattleShipStateTracker.Models.Boards
 {

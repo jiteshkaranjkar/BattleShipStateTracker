@@ -15,15 +15,15 @@ namespace BattleShipStateTracker.Models
       firstPlayer.PlaceShips();
 
       secondPlayer = new Player("Player Two");
-      secondPlayer.PlaceShips();
+      // secondPlayer.PlaceShips();
     }
 
 
     public void PlayRound()
     {
       //Player 1 fires a shot and validates if the shot is hit/miss
-      var coordinates = firstPlayer.FireShot();
-      var result = secondPlayer.ProcessShot(coordinates);
+      var coordinates = secondPlayer.FireShot();
+      var result = firstPlayer.ProcessShot(coordinates);
     }
   }
 }

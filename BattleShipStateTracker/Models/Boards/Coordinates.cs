@@ -1,4 +1,4 @@
-namespace BattleShipStateTracker.Models
+namespace BattleShipStateTracker.Models.Boards
 {
   public class Coordinates
   {

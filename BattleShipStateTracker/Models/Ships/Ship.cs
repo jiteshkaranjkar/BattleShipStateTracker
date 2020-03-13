@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using BattleShipStateTracker.Models.Boards;
 
 namespace BattleShipStateTracker.Models.Ships
 {
