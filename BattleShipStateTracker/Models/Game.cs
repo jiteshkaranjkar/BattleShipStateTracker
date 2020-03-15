@@ -15,7 +15,6 @@ namespace BattleShipStateTracker.Models
       firstPlayer.PlaceShips();
 
       secondPlayer = new Player("Player Two");
-      // secondPlayer.PlaceShips();
     }
 
 
