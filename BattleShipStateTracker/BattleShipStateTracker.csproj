@@ -6,7 +6,7 @@
 
 
   <ItemGroup>
-    <Compile Remove="Controllers\WeatherForecastController.cs" />
+    <Compile Remove="Controllers\BattleShipTrackerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AWSSDK.Core" Version="3.3.104.35" />

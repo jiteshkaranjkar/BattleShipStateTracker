@@ -13,19 +13,17 @@ namespace BattleShipStateTracker.Controllers
   [Route("BattleShipTracker")]
   public class BattleShipTrackerController : ControllerBase
   {
-    private readonly ILogger<BattleShipTrackerController> _logger;
+    public Game battleShipGame;
 
-    public BattleShipTrackerController(ILogger<BattleShipTrackerController> logger)
+    public BattleShipTrackerController()
     {
-      _logger = logger;
 
     }
 
-    // GET: api/ships
     [HttpGet]
     public void PlaceShipsAndFire()
     {
-      Game battleShipGame = new Game();
+      battleShipGame = new Game();
       battleShipGame.PlayRound();
     }
   }
