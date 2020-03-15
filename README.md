@@ -69,8 +69,8 @@ The current implementation of the game is to just implement a Battleship state t
 resulted in a hit or a miss.
 The API does not support the entire game, just the state tracker. No graphical interface or persistence layer is been implemented.
 
-## Tried to upload this application in Cloud using AWS BeanStalk and Lambda,SAM CLI, but was unsuccessful.
-### Beanstalk - Tried a couple of times but was getting Errors in deployment
+### Tried to upload this application in Cloud using AWS BeanStalk and Lambda,SAM CLI, but was unsuccessful.
+#### Beanstalk - Tried a couple of times but was getting Errors in deployment
   ERROR - Create environment operation is complete, but with errors. For more information, see troubleshooting documentation.
   2020-03-14 13:33:29 UTC+1100	
   WARN - Environment health has transitioned from Ok to Degraded. Command failed on all instances. Initialization completed 22 seconds ago and took 4 minutes.
@@ -83,7 +83,7 @@ The API does not support the entire game, just the state tracker. No graphical i
 
 
 
-### Lambda - Following are the error getting when deploying the codebase using SAM-CLI
+#### Lambda - Following are the error getting when deploying the codebase using SAM-CLI
   Starting SAM Application deployment...
   Building SAM Application...
   Packaging SAM Application to S3 Bucket: amplifyawsapp-20181213170826-deployment
