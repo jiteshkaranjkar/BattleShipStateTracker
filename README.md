@@ -87,7 +87,7 @@ The API does not support the entire game, just the state tracker. No graphical i
   - Deploying SAM Application to CloudFormation Stack: battleshipgame
   - Error: Error with child process: Usage: sam deploy [OPTIONS]
   - Try "sam deploy --help" for help.
-- 
+
   - Error: Invalid value for "--parameter-overrides":  AppId= is not in valid format. It must look something like 'ParameterKey=KeyPairName,ParameterValue=MyKey - ParameterKey=InstanceType,ParameterValue=t1.micro' or 'KeyPairName=MyKey InstanceType=t1.micro'
   - Deploy failed
   - An error occurred while deploying a SAM Application. Check the logs for more information by running the "View AWS Toolkit Logs" command from the Command Palette.
