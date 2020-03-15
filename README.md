@@ -68,3 +68,24 @@ The current implementation of the game is to just implement a Battleship state t
 • Take an “attack” at a given position, and report back whether the attack
 resulted in a hit or a miss.
 The API does not support the entire game, just the state tracker. No graphical interface or persistence layer is been implemented.
+
+## BattleShip Game Desired Output
+This output can only be seen in console once the application is executed. There is not UI developed
+
+Player One says: "Battleship with 4 Holes is placed at Row-4 and Column-9.
+Player One says: "Battleship with 4 Holes is placed at Row-5 and Column-9.
+Player One says: "Battleship with 4 Holes is placed at Row-6 and Column-9.
+Player One says: "Battleship with 4 Holes is placed at Row-7 and Column-9.
+Player One says: "Carrier with 5 Holes is placed at Row-5 and Column-10.
+Player One says: "Carrier with 5 Holes is placed at Row-6 and Column-10.
+Player One says: "Carrier with 5 Holes is placed at Row-7 and Column-10.
+Player One says: "Carrier with 5 Holes is placed at Row-8 and Column-10.
+Player One says: "Carrier with 5 Holes is placed at Row-9 and Column-10.
+Player One says: "Cruiser with 3 Holes is placed at Row-1 and Column-5.
+Player One says: "Destroyer with 2 Holes is placed at Row-1 and Column-2.
+Player One says: "Destroyer with 2 Holes is placed at Row-2 and Column-2.
+Player One says: "Submarine with 3 Holes is placed at Row-7 and Column-1.
+Player One says: "Submarine with 3 Holes is placed at Row-8 and Column-1.
+Player One says: "Submarine with 3 Holes is placed at Row-9 and Column-1.
+Player Two says: "Firing shot at 1, 5"
+Player One says: "Hit!"
