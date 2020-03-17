@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using BattleShipStateTracker.Controllers;
+using BattleShipStateTrackerAPI.Controllers;
 using Microsoft.Extensions.Logging;
 
 namespace BattleShipStateTrackerTest
@@ -12,7 +12,6 @@ namespace BattleShipStateTrackerTest
     public BattleShipTestsBase()
     {
       controller = new BattleShipTrackerController();
-      controller.PlaceShipsAndFire();
     }
 
     public void Dispose()
@@ -30,25 +29,31 @@ namespace BattleShipStateTrackerTest
     }
 
     [Fact]
-    public void CheckPlayers()
+    public void CheckPlayers_returnsTwoPlayers()
     {
-      string playerName = "Player One";
-      Assert.Equal(controller.battleShipGame.firstPlayer.Name, playerName);
+      string playerOne = "Player One";
+      Assert.Equal(controller.battleShipGame.firstPlayer.Name, playerOne);
+      string playerTwo = "Player Two";
+      Assert.Equal(controller.battleShipGame.secondPlayer.Name, playerTwo);
     }
 
     [Fact]
-    public void CheckFleetCount()
+    public void CreateBoard_returnsTwoBoards()
+    {
+      controller.CreateBoard();
+      BoardType ocean = BoardType.OceanBoard;
+      BoardType target = BoardType.TargetBoard;
+      Assert.Equal(controller.battleShipGame.firstPlayer.OceanBoard.BoardType, ocean);
+      Assert.Equal(controller.battleShipGame.firstPlayer.TargetBoard.BoardType, target);
+    }
+
+    [Fact]
+    public void AddBattleshipsOnBoard_returnsFleet()
     {
       int count = 5;
       Assert.Equal(controller.battleShipGame.firstPlayer.Fleet.Count, count);
+      Assert.Equal(controller.battleShipGame.secondPlayer.Fleet.Count, count);
     }
 
-    [Fact]
-    public void ValidateBoardCells()
-    {
-      int cellCount = 100;
-      Assert.Equal(controller.battleShipGame.firstPlayer.OceanBoard.Cells.Count, cellCount);
-      Assert.Equal(controller.battleShipGame.firstPlayer.TargetBoard.Cells.Count, cellCount);
-    }
   }
 }

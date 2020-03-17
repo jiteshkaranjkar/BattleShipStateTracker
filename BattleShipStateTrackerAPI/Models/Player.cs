@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using BattleShipStateTracker.Models.Boards;
-using BattleShipStateTracker.Models.Ships;
-using BattleShipStateTracker.Extensions;
+using BattleShipStateTrackerAPI.Models.Boards;
+using BattleShipStateTrackerAPI.Models.Ships;
+using BattleShipStateTrackerAPI.Extensions;
 using System.Linq;
 
-namespace BattleShipStateTracker.Models
+namespace BattleShipStateTrackerAPI.Models
 {
   public class Player
   {
@@ -17,8 +17,8 @@ namespace BattleShipStateTracker.Models
     public Player(string name)
     {
       Name = name;
-      TargetBoard = new TargetBoard();
       OceanBoard = new OceanBoard();
+      TargetBoard = new TargetBoard();
       Fleet = new List<Ship>(){
           new Battleship(),
           new Carrier(),
@@ -26,6 +26,12 @@ namespace BattleShipStateTracker.Models
           new Destroyer(),
           new Submarine()
         };
+    }
+
+    public void CreateBoard()
+    {
+      OceanBoard.DrawBoard();
+      TargetBoard.DrawBoard();
     }
 
     //Place all Ships with in the Ocean Board by validting if they are not out of range
@@ -77,12 +83,22 @@ namespace BattleShipStateTracker.Models
           }
           //Get the Coordinate of the Board where Ships are placed
           ship.ShipCoordinates = new List<Coordinates>();
-          for (int i = startrow; i <= endrow; i++)
+          if (orientation == 0)
           {
-            Console.WriteLine(Name + " says: \"" + ship.Name + " with " + ship.Holes + " Holes is placed at Row-" + i.ToString() + " and Column-" + startcolumn.ToString() + ".");
-            ship.ShipCoordinates.Add(new Coordinates(i, startcolumn));
+            for (int i = startrow; i <= endrow; i++)
+            {
+              Console.WriteLine(Name + " says: \"" + ship.Name + " with " + ship.Holes + " Holes is placed at Row-" + i.ToString() + " and Column-" + startcolumn.ToString() + ".");
+              ship.ShipCoordinates.Add(new Coordinates(i, startcolumn));
+            }
           }
-
+          else
+          {
+            for (int i = startcolumn; i <= endcolumn; i++)
+            {
+              Console.WriteLine(Name + " says: \"" + ship.Name + " with " + ship.Holes + " Holes is placed at Row-" + i.ToString() + " and Column-" + startcolumn.ToString() + ".");
+              ship.ShipCoordinates.Add(new Coordinates(i, startcolumn));
+            }
+          }
           foreach (var cell in affectedCells)
           {
             cell.BattleShipType = ship.BattleShipType;
@@ -92,25 +108,7 @@ namespace BattleShipStateTracker.Models
       }
     }
 
-    //Fire a shot by placing the 
-    public Coordinates FireShot()
-    {
-      Coordinates coords;
-      coords = RandomShot();
-      Console.WriteLine(Name + " says: \"Firing shot at " + coords.Row.ToString() + ", " + coords.Column.ToString() + "\"");
-      return coords;
-    }
-
-    // Choose Random coordinates 
-    private Coordinates RandomShot()
-    {
-      var availableCells = TargetBoard.GetOpenRandomCells();
-      Random rand = new Random(Guid.NewGuid().GetHashCode());
-      var cellID = rand.Next(availableCells.Count);
-      return availableCells[cellID];
-    }
-
-    // Once the Random coordinates are selected validate if it is Empty or Occupied
+    // Given coordinates are validate if it is Empty or Occupied
     // If Occupied then mark it as Hit else a Miss
     public ShotType ProcessShot(Coordinates coords)
     {

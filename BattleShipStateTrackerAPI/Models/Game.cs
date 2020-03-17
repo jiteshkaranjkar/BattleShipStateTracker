@@ -1,7 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using BattleShipStateTrackerAPI.Models.Boards;
 
-namespace BattleShipStateTracker.Models
+namespace BattleShipStateTrackerAPI.Models
 {
   public class Game
   {
@@ -12,17 +13,15 @@ namespace BattleShipStateTracker.Models
     public Game()
     {
       firstPlayer = new Player("Player One");
-      firstPlayer.PlaceShips();
-
       secondPlayer = new Player("Player Two");
     }
 
 
-    public void PlayRound()
+    public string Attack(Coordinates coordinates)
     {
       //Player 1 fires a shot and validates if the shot is hit/miss
-      var coordinates = secondPlayer.FireShot();
-      var result = firstPlayer.ProcessShot(coordinates);
+      //var coordinates = secondPlayer.FireShot();
+      return firstPlayer.ProcessShot(coordinates).ToString();
     }
   }
 }

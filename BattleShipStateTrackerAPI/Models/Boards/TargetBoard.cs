@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using BattleShipStateTracker.Extensions;
-using BattleShipStateTracker.Models.Boards;
+using BattleShipStateTrackerAPI.Extensions;
+using BattleShipStateTrackerAPI.Models.Boards;
 
-namespace BattleShipStateTracker.Models.Boards
+namespace BattleShipStateTrackerAPI.Models.Boards
 {
 
   //This is the 10*10 Target board where the Red/White Pegs get placed notifying Hit/Miss
@@ -13,13 +13,6 @@ namespace BattleShipStateTracker.Models.Boards
     {
       BoardType = BoardType.TargetBoard;
       Cells = new List<Cell>();
-      for (int x = 0; x < 10; x++)
-      {
-        for (int y = 0; y < 10; y++)
-        {
-          Cells.Add(new Cell(x, y));
-        }
-      }
     }
 
 

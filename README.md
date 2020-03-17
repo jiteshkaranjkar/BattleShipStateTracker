@@ -27,8 +27,9 @@ This is WebAPI project for creating BattleShip Game board with the followings
   
 ## Structure
 - Solution contains two projects 
-  - BattleShipStateTracker - the BattleShip Project
-  - BattleShipStateTrackerTest - the Unit test Project using xunit
+  - BattleShipStateTrackerConsole - A Console Project to take user input
+  - BattleShipStateTrackerAPI - the BattleShip API Project with game implementation
+  - BattleShipStateTrackerTest - the Unit test Project using xunit with around 12 unit test
 - /Controllers: WebAPI controller with basic method (GET)
 - /Extenstions: Contains C# extension methods
 - /Models: contains different data models
@@ -103,24 +104,27 @@ The API does not support the entire game, just the state tracker. No graphical i
   - An error occurred while deploying a SAM Application. Check the logs for more information by running the "View AWS Toolkit Logs" command from the Command Palette.
   
 
-## BattleShip Game Desired Output
-  This output can only be seen in console once the application is executed. There is not UI developed
+## BattleShip Game Desired Sample Output
+  This output can only be seen in console once the Console application is executed. There is not UI developed
 
-  - Player One says: "Battleship with 4 Holes is placed at Row-4 and Column-9.
-  - Player One says: "Battleship with 4 Holes is placed at Row-5 and Column-9.
-  - Player One says: "Battleship with 4 Holes is placed at Row-6 and Column-9.
-  - Player One says: "Battleship with 4 Holes is placed at Row-7 and Column-9.
-  - Player One says: "Carrier with 5 Holes is placed at Row-5 and Column-10.
-  - Player One says: "Carrier with 5 Holes is placed at Row-6 and Column-10.
-  - Player One says: "Carrier with 5 Holes is placed at Row-7 and Column-10.
-  - Player One says: "Carrier with 5 Holes is placed at Row-8 and Column-10.
-  - Player One says: "Carrier with 5 Holes is placed at Row-9 and Column-10.
-  - Player One says: "Cruiser with 3 Holes is placed at Row-1 and Column-5.
-  - Player One says: "Destroyer with 2 Holes is placed at Row-1 and Column-2.
-  - Player One says: "Destroyer with 2 Holes is placed at Row-2 and Column-2.
-  - Player One says: "Submarine with 3 Holes is placed at Row-7 and Column-1.
-  - Player One says: "Submarine with 3 Holes is placed at Row-8 and Column-1.
-  - Player One says: "Submarine with 3 Holes is placed at Row-9 and Column-1.
+  - Player One says: "Battleship with 4 Holes is placed at Row-1 and Column-1.
+  - Player One says: "Battleship with 4 Holes is placed at Row-2 and Column-1.
+  - Player One says: "Battleship with 4 Holes is placed at Row-3 and Column-1.
+  - Player One says: "Battleship with 4 Holes is placed at Row-4 and Column-1.
+  - Player One says: "Carrier with 5 Holes is placed at Row-3 and Column-8.
+  - Player One says: "Carrier with 5 Holes is placed at Row-4 and Column-8.
+  - Player One says: "Carrier with 5 Holes is placed at Row-5 and Column-8.
+  - Player One says: "Carrier with 5 Holes is placed at Row-6 and Column-8.
+  - Player One says: "Carrier with 5 Holes is placed at Row-7 and Column-8.
+  - Player One says: "Cruiser with 3 Holes is placed at Row-3 and Column-6.
+  - Player One says: "Cruiser with 3 Holes is placed at Row-4 and Column-6.
+  - Player One says: "Cruiser with 3 Holes is placed at Row-5 and Column-6.
+  - Player One says: "Destroyer with 2 Holes is placed at Row-8 and Column-1.
+  - Player One says: "Destroyer with 2 Holes is placed at Row-9 and Column-1.
+  - Player One says: "Submarine with 3 Holes is placed at Row-3 and Column-3.
+  - Player One says: "Submarine with 3 Holes is placed at Row-4 and Column-3.
+  - Player One says: "Submarine with 3 Holes is placed at Row-5 and Column-3.
+  
   - Player Two says: "Firing shot at 1, 5"
   - Player One says: "Hit!"
 

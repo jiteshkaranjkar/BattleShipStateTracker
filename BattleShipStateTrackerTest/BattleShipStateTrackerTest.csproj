@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BattleShipStateTracker\BattleShipStateTracker.csproj" />
+    <ProjectReference Include="..\BattleShipStateTrackerAPI\BattleShipStateTrackerAPI.csproj" />
   </ItemGroup>
 </Project>

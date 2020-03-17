@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BattleShipStateTrackerAPI.Models;
-using BattleShipStateTrackerAPI.Models.Ships;
+using BattleShipStateTrackerAPI.Models.Boards;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace BattleShipStateTrackerAPI.Controllers
 {
@@ -31,13 +27,13 @@ namespace BattleShipStateTrackerAPI.Controllers
     public void AddBattleshipsOnBoard()
     {
       battleShipGame.firstPlayer.PlaceShips();
-      battleShipGame.secondPlayer.PlaceShips();
     }
 
     [HttpPost]
-    public string Attack()
+    public string Attack(Coordinates coordinates)
     {
-      return battleShipGame.PlayRound();
+      Console.WriteLine(battleShipGame.firstPlayer.Name + " says: \"Firing shot at " + coordinates.Row.ToString() + ", " + coordinates.Column.ToString() + "\"");
+      return battleShipGame.Attack(coordinates);
     }
   }
 }

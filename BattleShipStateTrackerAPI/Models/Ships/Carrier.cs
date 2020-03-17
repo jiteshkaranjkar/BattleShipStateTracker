@@ -1,5 +1,5 @@
 
-namespace BattleShipStateTracker.Models.Ships
+namespace BattleShipStateTrackerAPI.Models.Ships
 {
   public class Carrier : Ship
   {

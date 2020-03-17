@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using BattleShipStateTracker.Models.Boards;
+using BattleShipStateTrackerAPI.Models.Boards;
 
-namespace BattleShipStateTracker.Models.Ships
+namespace BattleShipStateTrackerAPI.Models.Ships
 {
   public abstract class Ship
   {

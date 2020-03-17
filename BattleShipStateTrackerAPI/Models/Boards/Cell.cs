@@ -1,6 +1,6 @@
-using BattleShipStateTracker.Models.Boards;
+using BattleShipStateTrackerAPI.Models.Boards;
 
-namespace BattleShipStateTracker.Models
+namespace BattleShipStateTrackerAPI.Models
 {
     public class Cell
   {

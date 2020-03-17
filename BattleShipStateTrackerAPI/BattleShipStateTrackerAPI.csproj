@@ -5,6 +5,10 @@
   </PropertyGroup>
 
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'BattleShipStateTrackerAPIAPI' ">
+    <StartAction>Project</StartAction>
+    <ApplicationURL>http://localhost:5000</ApplicationURL>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Controllers\BattleShipTrackerController.cs" />
   </ItemGroup>
